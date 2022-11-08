@@ -3,24 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<settings>
-		<setting name="jdbcTypeForNull" value="OTHER"/><!-- jdbc의 널값인식 -->
-		<setting name="mapUnderscoreToCamelCase" value="true"/><!-- camel case자동변환 --> <!-- 이 두개는 필수 -->
-	</settings><!-- setting은 env보다 위 -->
+	<properties resource="config/db.properties"/>
+
 	
+	<settings>
+		<setting name="jdbcTypeForNull" value="OTHER"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-				<property name="username" value="hjj" />
-				<property name="password" value="hjj" />
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${password}" />
 			</dataSource>
 		</environment>
 	</environments>
-	
 	<mappers>
-		<mapper resource="co/micol/prj/book/mapper/BookMapper.xml" /> <!-- 매퍼에 리소스 연결 -->
+		<package name="co.micol.prj"/>
 	</mappers>
 </configuration>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!-- 일반xml파일이 아니고 이 앞에걸불러와야하기에 bookmapper랑 닉같이 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.micol.prj.book.mapper.BookMapper">
 	<select id="bookSelectList" resultType="co.micol.prj.book.vo.BookVO">
 		SELECT * FROM BOOK_INFO 
-	</select><!-- 관례상대문자 param은 없어도 되는데 돌려줄 값은 적어야-->
+	</select>
 	
-	<select id="bookSelect" resultType="co.micol.prj.book.vo.BookVO"><!-- select는 resulttype이 있어야 -->
+	<select id="bookSelect" resultType="co.micol.prj.book.vo.BookVO">
 		SELECT * FROM BOOK_INFO
 		WHERE BOOK_CODE = #{bookCode} 
-	</select><!-- vo객체명 ctrl+shi+x 대-->
+	</select>
 	
 	<insert id="bookInsert" parameterType="co.micol.prj.book.vo.BookVO">
 		INSERT INTO BOOK_INFO
 		VALUES(book_seq.nextval, #{bookTitle}, #{bookAuthor}, #{bookPress}, #{bookPrice})
-	</insert><!-- 받을 타임(파라미터타입)<->resulttype -->
+	</insert>
 	
-	<delete id="bookDelete" parameterType="co.micol.prj.book.vo.BookVO"><!-- in de 굳이 pam안서도oㅋ -->
+	<delete id="bookDelete" parameterType="co.micol.prj.book.vo.BookVO">
 		DELETE FROM BOOK_INFO WHERE BOOK_CODE = #{bookCode}
 	</delete>
 	

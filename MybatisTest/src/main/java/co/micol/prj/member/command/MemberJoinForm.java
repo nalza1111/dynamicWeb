@@ -1,15 +1,16 @@
-package co.micol.prj.main;
+package co.micol.prj.member.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.micol.prj.common.Command;
 
-public class MainCommand implements Command {
+public class MemberJoinForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		return "main/main.tiles";  // /web-inf/views/main/main.jsp
+		// 멤버조인 폼 호출
+		return "member/memberJoinForm.tiles";
 	}
 
 }
