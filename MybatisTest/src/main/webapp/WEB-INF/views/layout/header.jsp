@@ -26,7 +26,7 @@
 			</c:if>
 			<c:if test="${not empty id }">
 				<li><a class="menuLink" href="logout.do">Logout</a></li>
-				<li>${name }님 접속중"</li>
+				<li>${name }님 접속중</li>
 			</c:if>
 		</ul>
 	</nav>

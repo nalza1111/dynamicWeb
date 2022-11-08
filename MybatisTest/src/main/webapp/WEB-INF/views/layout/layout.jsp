@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title><tiles:getAsString name="title"/></title>
+	<meta charset="UTF-8">
+	<title><tiles:getAsString name="title"/></title>
 </head>
 <body>
 	<div><tiles:insertAttribute name="header"/></div>

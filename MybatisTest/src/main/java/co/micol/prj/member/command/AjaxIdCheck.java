@@ -16,7 +16,7 @@ public class AjaxIdCheck implements Command {
 		MemberService dao = new MemberServiceImpl();
 		String id = request.getParameter("id");
 		boolean b = dao.isMemberIdCheck(id); // 존재하면 false;
-		String result = "a0";
+		String result = "0";
 		if(b) {
 			result = "1";
 		}

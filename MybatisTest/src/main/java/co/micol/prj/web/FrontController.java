@@ -68,7 +68,6 @@ public class FrontController extends HttpServlet {
 			if(!viewPage.endsWith(".tiles")) { //타일즈 안태움
 				viewPage = "/WEB-INF/views/" + viewPage + ".jsp"; 
 			}
-			System.out.println(viewPage);
 			//map 처리
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage); //적절한 뷰를 찾아 디스패쳐
 			dispatcher.forward(request, response);
