@@ -17,11 +17,13 @@ public class BookList implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 책목록 가져오기
 		BookService dao = new BookServiceImpl();
-		List<BookVO> books = new ArrayList<BookVO>(); 
+		List<BookVO> books = new ArrayList<BookVO>();
+		System.out.println("dd");
 		books = dao.bookSelectList();
+		System.out.println("ddd");
 		request.setAttribute("books", books);
 		
-		return "book/bookList";
+		return "book/bookList.tiles";
 	}
 
 }
