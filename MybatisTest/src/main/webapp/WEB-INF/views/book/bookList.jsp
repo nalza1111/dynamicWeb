@@ -11,6 +11,7 @@
 		<div align="center">
 			<div><h1>책 목록보기</h1></div>
 			<div>
+				<h3>${books }</h3>
 				<c:forEach items="${books }" var="b">
 					${b.bookCode } : ${b.bookTitle } : ${b.bookAuthor }<br/>
 				</c:forEach>
